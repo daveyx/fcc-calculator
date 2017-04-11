@@ -16,8 +16,8 @@ export default class App extends Component {
 
   render() {
     return(
-      <div>
-        <Grid className="content">
+      <div className="wrapper">
+        <Grid className="content app">
           <Row>
             <Col xs={8} xsOffset={2}>
               <h1 className="text-center">
@@ -28,6 +28,10 @@ export default class App extends Component {
           </Row>
           <Row>
             <Col xs={12} md={10} mdOffset={1}>
+              <div className="main">
+
+
+              </div>
             </Col>
             </Row>
             <Row>
