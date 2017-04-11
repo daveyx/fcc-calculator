@@ -27,7 +27,14 @@ body {
   min-height: 150px;
 }
 
+.main .row {
+  padding-bottom: 15px;
+}
 
+.button, .display {
+  border: solid 1px #ccc;
+  border-radius: 5px;
+}
 
 footer {
   padding-bottom: 20px;

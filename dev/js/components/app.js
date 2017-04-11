@@ -20,7 +20,7 @@ export default class App extends Component {
       <div className="wrapper">
         <Grid className="content app">
           <Row>
-            <Col xs={8} xsOffset={2}>
+            <Col xs={10} xsOffset={1}>
               <h1 className="text-center">
                 Free Code Camp - JavaScript Calculator<br />
                 <small>by <a href="http://www.daveyx.ga" target="_blank" title="daveyx">daveyx</a></small>
