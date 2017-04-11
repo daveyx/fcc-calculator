@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
 import '../../css/style.css';
+import Calculator from './calculator'
 
 export default class App extends Component {
   constructor(props) {
@@ -27,11 +28,8 @@ export default class App extends Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} md={10} mdOffset={1}>
-              <div className="main">
-
-
-              </div>
+            <Col xs={12} md={4} mdOffset={4}>
+              <Calculator />
             </Col>
             </Row>
             <Row>
