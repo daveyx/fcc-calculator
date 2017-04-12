@@ -3,7 +3,7 @@
 import React, {Component} from 'react';
 import {Row, Col} from 'react-bootstrap';
 import '../../css/style.css';
-import Display from './display';
+import DisplayContainer from '../containers/displayContainer';
 import Button from './button';
 
 export default class Calculator extends Component {
@@ -21,7 +21,7 @@ export default class Calculator extends Component {
             <div className="main">
               <Row>
                 <Col xs={12}>
-                  <Display />
+                  <DisplayContainer />
                 </Col>
               </Row>
               <Row>
