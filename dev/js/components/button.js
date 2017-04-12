@@ -7,18 +7,13 @@ import '../../css/style.css';
 export default class Button extends Component {
   constructor(props) {
     super();
-    this.state = {
-    };
-  }
-
-  componentDidMount() {
   }
 
   render() {
     return(
-            <div className="button" onClick={this.props.clickHandler}>
-              {this.props.value}
-            </div>
+      <div className="button" onClick={this.props.clickHandler}>
+        {this.props.value}
+      </div>
     );
   }
 }

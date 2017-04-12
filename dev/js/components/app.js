@@ -8,11 +8,6 @@ import Calculator from './calculator'
 export default class App extends Component {
   constructor(props) {
     super();
-    this.state = {
-    };
-  }
-
-  componentDidMount() {
   }
 
   render() {
