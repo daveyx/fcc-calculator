@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import {Row, Col} from 'react-bootstrap';
 import '../../css/style.css';
 import DisplayContainer from '../containers/displayContainer';
-import Button from './button';
+import ButtonContainer from '../containers/buttonContainer';
 
 export default class Calculator extends Component {
   constructor(props) {
@@ -26,66 +26,66 @@ export default class Calculator extends Component {
               </Row>
               <Row>
                 <Col xs={6}>
-                  <Button value="AC" />
+                  <ButtonContainer value="AC" />
                 </Col>
                 <Col xs={6}>
-                  <Button value="CE" />
+                  <ButtonContainer value="CE" />
                 </Col>
               </Row>
               <Row>
                 <Col xs={3}>
-                  <Button value="7" />
+                  <ButtonContainer value="7" />
                 </Col>
                 <Col xs={3}>
-                  <Button value="8" />
+                  <ButtonContainer value="8" />
                 </Col>
                 <Col xs={3}>
-                  <Button value="9" />
+                  <ButtonContainer value="9" />
                 </Col>
                 <Col xs={3}>
-                  <Button value="/" />
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={3}>
-                  <Button value="4" />
-                </Col>
-                <Col xs={3}>
-                  <Button value="5" />
-                </Col>
-                <Col xs={3}>
-                  <Button value="6" />
-                </Col>
-                <Col xs={3}>
-                  <Button value="*" />
+                  <ButtonContainer value="/" />
                 </Col>
               </Row>
               <Row>
                 <Col xs={3}>
-                  <Button value="1" />
+                  <ButtonContainer value="4" />
                 </Col>
                 <Col xs={3}>
-                  <Button value="2" />
+                  <ButtonContainer value="5" />
                 </Col>
                 <Col xs={3}>
-                  <Button value="3" />
+                  <ButtonContainer value="6" />
                 </Col>
                 <Col xs={3}>
-                  <Button value="-" />
+                  <ButtonContainer value="*" />
                 </Col>
               </Row>
               <Row>
                 <Col xs={3}>
-                  <Button value="0" />
+                  <ButtonContainer value="1" />
                 </Col>
                 <Col xs={3}>
-                  <Button value="." />
+                  <ButtonContainer value="2" />
                 </Col>
                 <Col xs={3}>
-                  <Button value="=" />
+                  <ButtonContainer value="3" />
                 </Col>
                 <Col xs={3}>
-                  <Button value="+" />
+                  <ButtonContainer value="-" />
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={3}>
+                  <ButtonContainer value="0" />
+                </Col>
+                <Col xs={3}>
+                  <ButtonContainer value="." />
+                </Col>
+                <Col xs={3}>
+                  <ButtonContainer value="=" />
+                </Col>
+                <Col xs={3}>
+                  <ButtonContainer value="+" />
                 </Col>
               </Row>
             </div>
