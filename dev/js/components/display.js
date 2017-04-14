@@ -13,6 +13,9 @@ export default class Display extends Component {
     return(
       <div className="display">
         {this.props.display}
+        <div className="miniDisplay">
+          {this.props.miniDisplay}
+        </div>
       </div>
     );
   }
