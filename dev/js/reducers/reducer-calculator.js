@@ -17,6 +17,14 @@ export default (state=initialState, action) => {
       switch(action.payload) {
         case "AC":
           return initialState;
+        case "CE":
+          if (state.miniDisplay.length < 2) {
+            return initialState;
+          }
+          return Object.assign({}, state, {
+            display: state.miniDisplay[state.miniDisplay.length - 2],
+            miniDisplay: state.miniDisplay.substr(0, state.miniDisplay.length - 1)
+          });;
         default:
           return Object.assign({}, state, {
             display: action.payload,
