@@ -14,10 +14,15 @@ export default (state=initialState, action) => {
         miniDisplay: state.miniDisplay + action.payload
       });
     case "OPERATOR_CLICKED":
-      return Object.assign({}, state, {
-        display: action.payload,
-        miniDisplay: state.miniDisplay + action.payload
-      });
+      switch(action.payload) {
+        case "AC":
+          return initialState;
+        default:
+          return Object.assign({}, state, {
+            display: action.payload,
+            miniDisplay: state.miniDisplay + action.payload
+          });
+      }
     case "EQUALS_CLICKED":
   }
   return state;
