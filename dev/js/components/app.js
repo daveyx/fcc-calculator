@@ -23,7 +23,7 @@ export default class App extends Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} md={4} mdOffset={4}>
+            <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={4}>
               <Calculator />
             </Col>
             </Row>
