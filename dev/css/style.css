@@ -35,34 +35,32 @@ body {
   border: solid 1px #ccc;
   border-radius: 5px;
 }
+  .display {
+    min-height: 90px;
+  }
 
 @media only screen and (max-width : 479px) {
   .display {
-    min-height: 80px;
     font-size: 16vw;
   }
 }
 @media only screen and (min-width : 480px) {
   .display {
-    min-height: 80px;
     font-size: 16vw;
   }
 }
 @media only screen and (min-width : 768px) {
   .display {
-    min-height: 80px;
     font-size: 12vw;
   }
 }
 @media only screen and (min-width : 992px) {
   .display {
-    min-height: 80px;
     font-size: 4.1vw;
   }
 }
 @media only screen and (min-width : 1200px) {
   .display {
-    min-height: 80px;
     font-size: 4.1vw;
   }
 }
