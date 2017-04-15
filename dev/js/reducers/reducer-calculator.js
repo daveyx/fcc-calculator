@@ -38,10 +38,12 @@ export default (state=initialState, action) => {
             miniDisplay: state.miniDisplay.substr(0, state.miniDisplay.length - 1)
           });
         default:
-          return Object.assign({}, state, {
-            display: action.payload,
-            miniDisplay: state.miniDisplay + action.payload
-          });
+          return /\d/.test(state.display[state.display.length - 1]) ?
+            Object.assign({}, state, {
+              display: action.payload,
+              miniDisplay: state.miniDisplay + action.payload
+            }) :
+            Object.assign({}, state);
       }
     case "EQUALS_CLICKED":
       return calculate(state);
