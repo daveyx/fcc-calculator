@@ -31,15 +31,44 @@ body {
   padding-bottom: 15px;
 }
 
-.button, .display {
+.button, .display-wrapper {
   border: solid 1px #ccc;
   border-radius: 5px;
 }
-
-.display {
-  min-height: 80px;
+.display-wrapper {
+  min-height: 100px;
 }
-
+.display {
+  min-height: 100px;
+}
+.miniDisplay {
+  min-height: 20px;
+}
+@media only screen and (max-width : 479px) {
+  .display {
+    font-size: 16vw;
+  }
+}
+@media only screen and (min-width : 480px) {
+  .display {
+    font-size: 16vw;
+  }
+}
+@media only screen and (min-width : 768px) {
+  .display {
+    font-size: 12vw;
+  }
+}
+@media only screen and (min-width : 992px) {
+  .display {
+    font-size: 4.1vw;
+  }
+}
+@media only screen and (min-width : 1200px) {
+  .display {
+    font-size: 4.1vw;
+  }
+}
 .button {
   padding: 10px;
 }
