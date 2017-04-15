@@ -92,7 +92,6 @@ function calculate(state) {
       return (calculateInternal(acc, current, operators[index - 1]));
     }
   }, null);
-  console.log(result);
   return Object.assign({}, state, {
     display: [result],
     miniDisplay: state.miniDisplay + "=" + result,
@@ -117,5 +116,26 @@ function calculateInternal(op1, op2, operator) {
       break;
     default: return undefined;
   }
-  return result;
+  return round(result);
+}
+
+// round function if answer includes a decimal
+// stolen from https://codepen.io/freeCodeCamp/pen/rLJZrA?editors=0010
+function round(val) {
+  val = val.toString().split('');
+  if (val.indexOf('.') !== -1) {
+    var valTest = val.slice(val.indexOf('.') + 1, val.length);
+    val = val.slice(0, val.indexOf('.') + 1);
+    var i = 0;
+    while (valTest[i] < 1) {
+      i++
+    }
+    valTest = valTest.join('').slice(0, i + 2);
+    if (valTest[valTest.length-1] === '0') {
+      valTest = valTest.slice(0, -1);
+    }
+    return val.join('') + valTest;
+  } else {
+    return val.join('');
+  }
 }
