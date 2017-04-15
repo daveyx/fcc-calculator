@@ -31,8 +31,11 @@ export default (state=initialState, action) => {
     case "OPERATOR_CLICKED":
       switch(action.payload) {
         case "AC":
-          return initialState;
+          return Object.assign(initialState);
         case "CE":
+          if (state.result) {
+            return Object.assign(initialState);
+          }
           if (state.miniDisplay.length < 2) {
             return initialState;
           }
