@@ -2,11 +2,11 @@
 
 const initialState = {
   display: [],
-  miniDisplay: ""
+  miniDisplay: "",
+  result: ""
 }
 
 export default (state=initialState, action) => {
-  // console.log("reducer called... actiontype=" + action.type);
   switch(action.type) {
     case "BUTTON_CLICKED":
       if (maxDigitsReached(state)) {
@@ -58,7 +58,21 @@ function maxDigitsReached(state) {
   return false;
 }
 
-function calculate (state) {
-  console.log(state);
+function calculate(state) {
+  let operands = [];
+  let operators = [];
+  let tempOperand = "";
+  for (let i = 0; i < state.miniDisplay.length; i++) {
+    let val = state.miniDisplay[i];
+    if (/\d|\./.test(val)) {
+      tempOperand += val;
+    } else {
+      operands.push(tempOperand);
+      tempOperand = "";
+      operators.push(val);
+    }
+  };
+  operands.push(tempOperand);
+  console.log(operands, operators, tempOperand);
   return state;
 };
