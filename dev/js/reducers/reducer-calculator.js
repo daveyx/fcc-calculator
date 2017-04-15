@@ -16,7 +16,6 @@ export default (state=initialState, action) => {
   switch(action.type) {
     case "BUTTON_CLICKED":
       if (state.display.length >= 8) {
-        console.log("BUTTON_CLICKED----->", state.display + action.payload);
         return Object.assign(errorState);
       }
       return state.result ?
@@ -61,7 +60,6 @@ export default (state=initialState, action) => {
       }
       let result = calculate(state);
       if (maxDigitsReached("" + result.result)) {
-        console.log("EQUALS_CLICKED----->", result.result);
         return Object.assign(errorState);
       }
       return result;
