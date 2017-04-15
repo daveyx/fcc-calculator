@@ -6,14 +6,17 @@ const initialState = {
   result: ""
 }
 
+const errorState = {
+  display: [],
+  miniDisplay: "Sorry, can not display digit length",
+  result: ""
+}
+
 export default (state=initialState, action) => {
   switch(action.type) {
     case "BUTTON_CLICKED":
-      if (maxDigitsReached(state)) {
-        return {
-          display: [],
-          miniDisplay: "Sorry, can not display digit length"
-        }
+      if (maxDigitsReached(state.display)) {
+        return Object.assign(errorState);
       }
       return state.result ?
         {
@@ -23,15 +26,9 @@ export default (state=initialState, action) => {
         } :
         Object.assign({}, state, {
           display: /\d/.test(state.display) ? state.display.concat(action.payload) : [action.payload],
-          miniDisplay: state.miniDisplay + action.payload
+          miniDisplay: state.miniDisplay === errorState.miniDisplay ? action.payload : state.miniDisplay + action.payload
         });
     case "OPERATOR_CLICKED":
-      if (maxDigitsReached(state)) {
-        return {
-          display: [],
-          miniDisplay: "Sorry, can not display digit length"
-        }
-      }
       switch(action.payload) {
         case "AC":
           return initialState;
@@ -58,13 +55,17 @@ export default (state=initialState, action) => {
               Object.assign({}, state);
       }
     case "EQUALS_CLICKED":
-      return calculate(state);
+      let result = calculate(state);
+      if (maxDigitsReached("" + result.result)) {
+        return Object.assign(errorState);
+      }
+      return result;
   }
   return state;
 }
 
-function maxDigitsReached(state) {
-  if (state.display.length >= 8) {
+function maxDigitsReached(val) {
+  if (val.length >= 8) {
     return true;
   }
   return false;
