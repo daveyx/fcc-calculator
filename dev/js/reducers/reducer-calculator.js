@@ -15,10 +15,16 @@ export default (state=initialState, action) => {
           miniDisplay: "Sorry, can not display digit length"
         }
       }
-      return Object.assign({}, state, {
-        display: /\d/.test(state.display) ? state.display.concat(action.payload) : [action.payload],
-        miniDisplay: state.miniDisplay + action.payload
-      });
+      return state.result ?
+        {
+          display: [action.payload],
+          miniDisplay: action.payload,
+          result: ""
+        } :
+        Object.assign({}, state, {
+          display: /\d/.test(state.display) ? state.display.concat(action.payload) : [action.payload],
+          miniDisplay: state.miniDisplay + action.payload
+        });
     case "OPERATOR_CLICKED":
       if (maxDigitsReached(state)) {
         return {
@@ -38,12 +44,18 @@ export default (state=initialState, action) => {
             miniDisplay: state.miniDisplay.substr(0, state.miniDisplay.length - 1)
           });
         default:
-          return /\d/.test(state.display[state.display.length - 1]) ?
-            Object.assign({}, state, {
-              display: action.payload,
-              miniDisplay: state.miniDisplay + action.payload
-            }) :
-            Object.assign({}, state);
+          return state.result ?
+            {
+              display: [action.payload],
+              miniDisplay: state.result + action.payload,
+              result: ""
+            } :
+            /\d/.test(state.display[state.display.length - 1]) ?
+              Object.assign({}, state, {
+                display: action.payload,
+                miniDisplay: state.miniDisplay + action.payload
+              }) :
+              Object.assign({}, state);
       }
     case "EQUALS_CLICKED":
       return calculate(state);
@@ -73,6 +85,37 @@ function calculate(state) {
     }
   };
   operands.push(tempOperand);
-  console.log(operands, operators, tempOperand);
-  return state;
+  let result = operands.reduce((acc, current, index) => {
+    if (acc === null) {
+      return current;
+    } else {
+      return (calculateInternal(acc, current, operators[index - 1]));
+    }
+  }, null);
+  console.log(result);
+  return Object.assign({}, state, {
+    display: [result],
+    miniDisplay: state.miniDisplay + "=" + result,
+    result: result
+  });
 };
+
+function calculateInternal(op1, op2, operator) {
+  let result;
+  switch(operator) {
+    case "+":
+      result = Number(op1) + Number(op2);
+      break;
+    case "-":
+      result = Number(op1) - Number(op2);
+      break;
+    case "*":
+      result = Number(op1) * Number(op2);
+      break;
+    case "/":
+      result = Number(op1) / Number(op2);
+      break;
+    default: return undefined;
+  }
+  return result;
+}
