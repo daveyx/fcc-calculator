@@ -31,14 +31,19 @@ body {
   padding-bottom: 15px;
 }
 
-.button, .display {
+.button, .display-wrapper {
   border: solid 1px #ccc;
   border-radius: 5px;
 }
-  .display {
-    min-height: 90px;
-  }
-
+.display-wrapper {
+  min-height: 100px;
+}
+.display {
+  min-height: 100px;
+}
+.miniDisplay {
+  min-height: 20px;
+}
 @media only screen and (max-width : 479px) {
   .display {
     font-size: 16vw;
@@ -64,11 +69,6 @@ body {
     font-size: 4.1vw;
   }
 }
-
-.miniDisplay {
-  font-size: initial;
-}
-
 .button {
   padding: 10px;
 }
