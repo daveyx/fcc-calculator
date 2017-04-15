@@ -1,20 +1,16 @@
-     ________         __       ___      ___   _______   ___  ___   ___  ___  
-    |"      "\       /""\     |"  \    /"  | /"     "| |"  \/"  | |"  \/"  |
-    (.  ___  :)     /    \     \   \  //  / (: ______)  \   \  /   \   \  /  
-    |: \   ) ||    /' /\  \     \\  \/. ./   \/    |     \\  \/     \\  \/   
-    (| (___\ ||   //  __'  \     \.    //    // ___)_    /   /      /\.  \   
-    |:       :)  /   /  \\  \     \\   /    (:      "|  /   /      /  \   \  
-    (________/  (___/    \___)     \__/      \_______) |___/      |___/\___|
-    ------------------------------------------------------------------------
+        ___                     __  __
+       /   \__ ___   _____ _   _\ \/ /
+      / /\ / _` \ \ / / _ \ | | |\  / 
+     / /_// (_| |\ V /  __/ |_| |/  \ 
+    /___,' \__,_| \_/ \___|\__, /_/\_\
+                           |___/      
+    -----------------------------------
 
-# my javascript calculator with react
+# my javascript calculator with react & redux
 https://www.freecodecamp.com/challenges/build-a-javascript-calculator
 
-### live demo coming soon
+### live demo
 https://daveyx.github.io/fcc-calculator
-
-### view at codepen
-TBC
 
 ### install
 1. git clone https://github.com/daveyx/fcc-calculator
