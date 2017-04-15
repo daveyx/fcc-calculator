@@ -56,6 +56,9 @@ export default (state=initialState, action) => {
               Object.assign({}, state);
       }
     case "EQUALS_CLICKED":
+      if (state.result) {
+        return Object.assign(state);
+      }
       let result = calculate(state);
       if (maxDigitsReached("" + result.result)) {
         console.log("EQUALS_CLICKED----->", result.result);
