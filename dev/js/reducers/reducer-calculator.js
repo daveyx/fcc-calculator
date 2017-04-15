@@ -15,7 +15,8 @@ const errorState = {
 export default (state=initialState, action) => {
   switch(action.type) {
     case "BUTTON_CLICKED":
-      if (maxDigitsReached(state.display)) {
+      if (state.display.length >= 8) {
+        console.log("BUTTON_CLICKED----->", state.display + action.payload);
         return Object.assign(errorState);
       }
       return state.result ?
@@ -57,6 +58,7 @@ export default (state=initialState, action) => {
     case "EQUALS_CLICKED":
       let result = calculate(state);
       if (maxDigitsReached("" + result.result)) {
+        console.log("EQUALS_CLICKED----->", result.result);
         return Object.assign(errorState);
       }
       return result;
@@ -65,7 +67,7 @@ export default (state=initialState, action) => {
 }
 
 function maxDigitsReached(val) {
-  if (val.length >= 8) {
+  if (val.length >= 9) {
     return true;
   }
   return false;
